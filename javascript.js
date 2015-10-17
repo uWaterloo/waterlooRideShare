@@ -135,6 +135,7 @@ waterlooRideShareFactory) {
             $scope.portalHelpers.invokeServerFunction('bookRideNow', {
                 id: id, numPassengers: numPassengers
             })
+            $scope.portalHelpers.showView('main.html', 2);
     };
 
 }])
