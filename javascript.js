@@ -17,6 +17,22 @@ waterlooRideShareFactory) {
     $scope.dbData = waterlooRideShareFactory.dbData;
     $scope.item = waterlooRideShareFactory.item;
 
+    // Hard-coded cities
+    
+            /*            <option value="waterloo">Waterloo</option>
+                    <option value="toronto">Toronto</option>
+                    <option value="barrie">Barrie</option>
+                    <option value="burlington">Burlington</option>
+                    <option value="guelph">Guelph</option>
+                    <option value="hamilton">Hamilton</option>
+                    <option value="kitchener">Kitchener</option>
+                    <option value="london">London</option>
+                    <option value="markham">Markham</option>
+                    <option value="mississauga">Mississauga</option>
+                    <option value="ottawa">Ottawa</option>
+                    <option value="vaughn">Vaughn</option> */
+    $scope.cities = ["Waterloo", "Toronto", "Barrie", "Burlington"];
+    
     // Model for the search and list example
     $scope.model = [{
         title: "item 1",
