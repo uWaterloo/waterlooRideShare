@@ -37,7 +37,36 @@
 <script type="text/ng-template" id="newPost.html">
     <widget-row>
         <widget-cell>
-            <h2>New Post goes here!</h2>
+            <form name="postNewRide">
+                <h2>Post New Ride</h2>
+                <h3>Departure</h3>
+                <p>City</p>
+                <select ng-model="DepartureCity">
+                   <option ng-repeat="city in cities" value="{{city}}">{{city}}</option>
+                </select>
+
+                <p>Pick-up Address</p>
+                <input type="text" name="address" ng-model="DepartureAddress" />
+                <p>Date</p>
+                <input type="date" name="date" ng-model="DepartureDate" />
+                <h3>Destination</h3>
+                <p>City</p>
+                <select ng-model="DestinationCity">
+                   <option ng-repeat="city in cities" value="{{city}}">{{city}}</option>
+                </select>
+                <p>Drop-off</p>
+                <input type="text" name="dropoff" ng-model="DestinationDropoff" />
+                <h3>Details</h3>
+                <p>Seats Available</p>
+                <select ng-model="RideSeatsCapacity">
+                   <option ng-repeat="s in [1, 2, 3, 4, 5, 6]" value="{{s}}">{{s}}</option>
+                </select>
+                <p>Notes</p>
+                <textarea name="notes" ng-model="RideNotes">
+                    Enter notes here.
+                </textarea>
+                <input type="submit" value="Submit" />
+            </form>
         </widget-cell>
     </widget-row>
 </script>
