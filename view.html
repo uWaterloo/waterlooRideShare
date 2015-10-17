@@ -97,6 +97,7 @@
                             Date:<br/>
                             <input type="text" class="form-control" ng-model="ride.DepartureDate" />
                             <button ng-click="findResults()" class="btn btn-primary btn">Search</button>
+                            {{ride}}
                         </div>
                             
                     </form>
@@ -109,7 +110,7 @@
     <widget-row>
         <widget-cell>
             <h2>Find results goes here!</h2>
-            <widget-row ng-repeat="item in dbData.value">
+            <widget-row ng-repeat="item in searchData.value">
                 <div>
                 	<widget-cell>
                     	<div class="pDetails">ID: {{item.RideID}}</div>
