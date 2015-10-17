@@ -91,6 +91,7 @@ waterlooRideShareFactory) {
             rideNotes: $scope.insertValue.RideNotes
         }).then(function (result) {
             $scope.dbData.value = result;
+            $scope.portalHelpers.showView('main.html', 2);
         });
         $scope.insertValue.value = "";
     };
