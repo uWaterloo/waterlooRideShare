@@ -2,7 +2,7 @@
 
 // Retreive data from the database
 function getData() {
-    var queryResult = db.Execute('SELECT * FROM sampleTable');
+    var queryResult = db.Execute('SELECT * FROM Rides');
     var rows = JSON.parse(queryResult);
     if (rows.length > 0 && typeof rows[0].Error != 'undefined') {
         return '{"status":"noTable"}';
@@ -34,6 +34,14 @@ function insert() {
         db.Execute('INSERT INTO sampleTable VALUES(@currentUser,@value)');
         return getData();
     }
+}
+
+function insertRide() {
+/*    if (args.Get("value").length > 50)
+        return '{"result":"error"}';
+    else { */
+    db.Execute('INSERT INTO Rides (DriverID, DepartureCity, DepartureAddress, DepartueDate, DestinationCity, DestinationDropoff, RideSeatsCapacity, RideNotes) VALUES (@currentUser, @departureCity, @departureAddress, @departureDate, @destinationCity, @destinationDropoff, @rideSteatsCapacity, @rideNotes);');
+    return getData();
 }
 
 // OPEN DATA API EXAMPLE
