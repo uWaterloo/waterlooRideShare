@@ -20,6 +20,19 @@
             </widget-cell>
         </widget-row>
     </div>
+    
+    ALL RIDES
+    <div>
+        <widget-row ng-if="dbData.value" ng-repeat="row in dbData.value">
+            <widget-cell>
+                {{ row.DepartureCity }} -> {{ row.DestinationCity }}<br/>
+                {{ row.DepartureAddress }} -> {{ row.DestinationDropoff }}<br/>
+                {{ row.RideSeatsCapacity - row.RideSeatsTaken }} spots remaining<br/>
+                Driving: {{ row.DriverID }}
+            </widget-cell>
+        </widget-row>
+    </div>
+    
     <!-- SEARCH AND LIST EXAMPLE -->
     <div class="collapseMe">
         <widget-row>
@@ -61,47 +74,6 @@
                 </widget-list>
             </widget-not-searching>
         </widget-search>
-    </div>
-
-    <!-- DATABASE EXAMPLE -->
-    <div class="collapseMe">
-        <widget-row>
-            <widget-cell>
-                <h2>Database Test</h2>
-            </widget-cell>
-        </widget-row>
-        <div ng-if="dbData.value.status">
-            <widget-row>
-                <widget-cell>
-                    <div class="pDetails" ng-if="dbData.value.status=='noTable'">
-                        Table does not exist,
-                        <a ng-click="createTable()">create table</a>.
-                    </div>
-                </widget-cell>
-            </widget-row>
-        </div>
-        <div ng-if="!dbData.value.status">
-            <widget-row>
-                <widget-cell>
-                    <form class="form-inline" ng-submit="insertData()">
-                        <div class="input-group" style="width: 100%;">
-                            <input type="text" class="form-control" ng-model="insertValue.value" placeholder="Enter some text and submit" />
-                            <span class="input-group-btn" style="overflow:hidden;">
-                                <button class="btn btn-primary glyphicon glyphicon glyphicon-ok btn" type="submit" style="margin-top: -1px;"></button>
-                            </span>
-                        </div>
-                    </form>
-                </widget-cell>
-            </widget-row>
-
-            <widget-row ng-repeat="item in dbData.value">
-                <widget-cell>
-                    <div class="pDetails">Id: {{item.id}}</div>
-                    <div class="pDetails">UserId: {{item.userId}}</div>
-                    <div class="pDetails">Value: {{item.value}}</div>
-                </widget-cell>
-            </widget-row>
-        </div>
     </div>
 
     <!-- COMPLEX ROW EXAMPLE -->
@@ -251,15 +223,6 @@
         <widget-cell>
             <h2>Find info goes here!</h2>
             <button ng-click="findResults()">Search</button>
-        </widget-cell>
-    </widget-row>
-</script>
-
-<!-- VIEW FOR FIND  -->
-<script type="text/ng-template" id="findResults.html">
-    <widget-row>
-        <widget-cell>
-            <h2>Find results goes here!</h2>
         </widget-cell>
     </widget-row>
 </script>
