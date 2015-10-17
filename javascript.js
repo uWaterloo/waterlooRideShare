@@ -20,7 +20,6 @@ waterlooRideShareFactory) {
     // Declare all variables
     $scope.insertValue.DepartureCity;
     $scope.insertValue.DepartureAddress;
-    $scope.insertValue.DepartureDate;
     $scope.insertValue.DestinationCity;
     $scope.insertValue.DestinationDropoff;
     $scope.insertValue.RideSeatsCapacity;
@@ -83,26 +82,18 @@ waterlooRideShareFactory) {
 
     // Handle form submit in the database test example
     $scope.insertData = function () {
-        console.log($scope.insertValue);
-        
-        
-       /* if ($scope.insertValue.value.length > 50)
-            alert('value should be less than 50 characters');
-        else { */
-            $scope.portalHelpers.invokeServerFunction('insertRide', {
-                departureCity: $scope.insertValue.DepartureCity,
-                departureAddress: $scope.insertValue.DepartureAddress,
-                departureDate: $scope.insertValue.DepartureDate,
-                destinationCity: $scope.insertValue.DestinationCity,
-                destinationDropoff: $scope.insertValue.DestinationDropoff,
-                rideSeatsCapacity: parseInt($scope.insertValue.RideSeatsCapacity),
-                rideNotes: $scope.insertValue.RideNotes
-            }).then(function (result) {
-                console.log(result);
-                $scope.dbData.value = result;
-            });
-            $scope.insertValue.value = "";
-        /*}*/ 
+        $scope.portalHelpers.invokeServerFunction('insertRide', {
+            departureCity: $scope.insertValue.DepartureCity,
+            departureAddress: $scope.insertValue.DepartureAddress,
+            destinationCity: $scope.insertValue.DestinationCity,
+            destinationDropoff: $scope.insertValue.DestinationDropoff,
+            rideSeatsCapacity: parseInt($scope.insertValue.RideSeatsCapacity),
+            rideNotes: $scope.insertValue.RideNotes
+        }).then(function (result) {
+            $scope.dbData.value = result;
+            console.log(result);
+        });
+        $scope.insertValue.value = "";
     };
 
     // Handle click on an item in the list and search example
