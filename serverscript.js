@@ -2,7 +2,7 @@
 
 // Retreive data from the database
 function getData() {
-    var queryResult = db.Execute('SELECT * FROM sampleTable');
+    var queryResult = db.Execute('SELECT * FROM rides');
     var rows = JSON.parse(queryResult);
     if (rows.length > 0 && typeof rows[0].Error != 'undefined') {
         return '{"status":"noTable"}';
@@ -24,6 +24,12 @@ function createTable() {
         result = '{"status":"tableExist"}';
 
     return JSON.stringify(result);
+}
+
+// Search table
+function searchForRides() {
+	var queryResult = db.Execute('SELECT * FROM rides where DepartureCity=\'@ride.DepartureCity\'');
+    return queryResult;
 }
 
 // Insert into the database

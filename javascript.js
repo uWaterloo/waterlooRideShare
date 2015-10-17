@@ -16,6 +16,8 @@ waterlooRideShareFactory) {
     $scope.openDataExampleData = waterlooRideShareFactory.openDataExampleData;
     $scope.dbData = waterlooRideShareFactory.dbData;
     $scope.item = waterlooRideShareFactory.item;
+    $scope.ride = waterlooRideShareFactory.ride;
+    $scope.searchData = waterlooRideShareFactory.searchData;
 
     // Hard-coded cities
     
@@ -108,35 +110,25 @@ waterlooRideShareFactory) {
     };
     
     // Handle Post New
-    $scope.newPost = function (item) {
-      //  open new post
+    $scope.newPost = function () {
       $scope.portalHelpers.showView('newPost.html', 2);
     };
     
     // Handle Find Info
-    $scope.findInfo = function (item) {
-      //  open new post
+    $scope.findInfo = function () {
       $scope.portalHelpers.showView('findInfo.html', 2);
     };
     
     // Handle Find Results
-    $scope.findResults = function (item) {
-      //  open new post
+    $scope.findResults = function (ride) {   
+        $scope.portalHelpers.invokeServerFunction('searchForRides', {
+                ride: $scope.ride.value
+            }).then(function (
+            result) {
+            $scope.ride.value = result;
+        });
       $scope.portalHelpers.showView('findResults.html', 2);
     };
-
-    // Handle "previous item" click from the details page
-    $scope.prevItem = function () {
-        // get previous items in the list
-        var prevItem = $scope.portalHelpers.getPrevListItem();
-        // refresh details view with the new item
-        $scope.showDetails(prevItem);
-    }
-
-    $scope.nextItem = function () {
-        var nextItem = $scope.portalHelpers.getNextListItem();
-        $scope.showDetails(nextItem);
-    }
 
 }])
     // Factory maintains the state of the widget
@@ -164,6 +156,12 @@ waterlooRideShareFactory) {
         };
         var item = {
             value: null
+        };
+        var ride = {
+            value: null
+        };
+        var searchData = {
+            value: null  
         };
         var sourcesLoaded = 0;
 
@@ -207,7 +205,9 @@ waterlooRideShareFactory) {
             links: links,
             openDataExampleData: openDataExampleData,
             dbData: dbData,
-            item: item
+            item: item,
+            ride: ride,
+            searchData: searchData
         };
 
     }])
