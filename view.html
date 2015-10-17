@@ -217,7 +217,7 @@
                 <h2>Post New Ride</h2>
                 <h3>Departure</h3>
                 <p>City</p>
-                <select ng-model="city">
+                <select ng-model="DepartureCity">
                     <option value="waterloo">Waterloo</option>
                     <option value="toronto">Toronto</option>
                     <option value="barrie">Barrie</option>
@@ -233,8 +233,9 @@
                    
                 </select>
                 <p>Pick-up Address</p>
-                <i
-                <p>Date</p>
+                <input type="text" name="address" ng-model="DepartureAddress" />
+                <p>Date (YYYY/MM/DD)</p>
+                
                 <h3>Destination</h3>
                 <p>City</p>
                 <p>Drop-off</p>
