@@ -223,8 +223,6 @@
 
                 <p>Pick-up Address</p>
                 <input type="text" name="address" ng-model="insertValue.DepartureAddress" />
-                <p>Date</p>
-                <input type="date" name="date" ng-model="insertValue.DepartureDate" />
                 <h3>Destination</h3>
                 <p>City</p>
                 <select ng-model="insertValue.DestinationCity">
@@ -235,7 +233,7 @@
                 <h3>Details</h3>
                 <p>Seats Available</p>
                 <select ng-model="insertValue.RideSeatsCapacity">
-                   <option ng-repeat="s in [1, 2, 3, 4, 5]" value="{{s}}">{{s}}</option>
+                   <option ng-repeat="s in [1, 2, 3]" value="{{s}}">{{s}}</option>
                 </select>
                 <p>Notes</p>
                 <textarea name="notes" ng-model="insertValue.RideNotes">
