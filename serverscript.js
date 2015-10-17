@@ -41,7 +41,7 @@ function insertRide() {
         return '{"result":"error"}';
     else { */
     
-    db.Execute('INSERT INTO Rides (DriverID, DepartureCity, DepartureAddress, DepartureDate, DestinationCity, DestinationDropoff, RideSeatsCapacity, RideNotes) VALUES (@currentUser, @departureCity, @departureAddress, @departureDate, @destinationCity, @destinationDropoff, @rideSeatsCapacity, @rideNotes);');
+    db.Execute('INSERT INTO Rides (DriverID, DepartureCity, DepartureAddress, DestinationCity, DestinationDropoff, RideSeatsCapacity, RideSeatsTaken, RideNotes) VALUES (@currentUser, @departureCity, @departureAddress, @destinationCity, @destinationDropoff, @rideSeatsCapacity, 0, @rideNotes);');
 
     return getData();
 }
