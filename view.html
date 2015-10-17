@@ -96,12 +96,12 @@
             <h2>Available Rides!</h2>
             <widget-row ng-repeat="item in searchData.value">
                 	<widget-cell>
-                    	<div class="pDetails">
+                    	<div class="pDetails" id="{{item.RideID}}">
                             {{item.DepartureCity}} to {{item.DestinationCity}}<br/>
                         	{{item.DepartureAddress}} to {{item.DestinationDropoff}}<br/>
                             {{item.RideSeatsTaken}}/{{item.RideSeatsCapacity}} seats available
-                            <div ng-show="item.RideSeatsTaken != item.RideSeatsCapacity">
-                                <button>Book Now!</button>
+                            <div ng-show="{{item.RideSeatsTaken}} != {{item.RideSeatsCapacity}}">
+                                <button class="btn btn-primary btn" ng-click="bookRide(item.RideID, item.RideSeatsTaken)">Book Now!</button>
                             </div>
                         </div>
                		</widget-cell>
