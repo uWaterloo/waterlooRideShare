@@ -102,6 +102,12 @@ waterlooRideShareFactory) {
       //  open new post
       $scope.portalHelpers.showView('findInfo.html', 2);
     };
+    
+    // Handle Find Results
+    $scope.findResults = function (item) {
+      //  open new post
+      $scope.portalHelpers.showView('findResults.html', 2);
+    };
 
     // Handle "previous item" click from the details page
     $scope.prevItem = function () {
