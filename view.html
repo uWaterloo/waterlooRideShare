@@ -213,7 +213,25 @@
 <script type="text/ng-template" id="newPost.html">
     <widget-row>
         <widget-cell>
-            <h2>New Post goes here!</h2>
+            <form name="postNewRide">
+                <h2>Post New Ride</h2>
+                <h3>Departure</h3>
+                <p>City</p>
+                <select ng-model="city">
+                    <option value="waterloo">Waterloo</option>
+                    <option value="toronto">Toronto</option>
+                </select>
+                <p>Pick-up Address</p>
+                <i
+                <p>Date</p>
+                <h3>Destination</h3>
+                <p>City</p>
+                <p>Drop-off</p>
+                <h3>Details</h3>
+                <p>Seats Available</p>
+                <p>Notes</p>
+                <input type="submit" value"Submit" />
+            </form>
         </widget-cell>
     </widget-row>
 </script>
