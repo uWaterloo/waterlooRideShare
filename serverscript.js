@@ -28,7 +28,7 @@ function createTable() {
 
 // Search table
 function searchForRides() {
-	var queryResult = db.Execute('SELECT * FROM rides where DepartureCity=\'@ride.DepartureCity\'');
+	var queryResult = db.Execute('SELECT * FROM rides where DepartureCity=@departureCity');
     return queryResult;
 }
 
