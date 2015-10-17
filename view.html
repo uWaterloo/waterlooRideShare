@@ -223,11 +223,11 @@
 
                 <p>Pick-up Address</p>
                 <input type="text" name="address" ng-model="DepartureAddress" />
-                <p>Date (YYYY/MM/DD)</p>
+                <p>Date</p>
                 <input type="date" name="date" ng-model="DepartureDate" />
                 <h3>Destination</h3>
                 <p>City</p>
-                <select ng-model="Destination City">
+                <select ng-model="DestinationCity">
                    <option ng-repeat="city in cities" value="{{city}}">{{city}}</option>
                 </select>
                 <p>Drop-off</p>
@@ -241,7 +241,7 @@
                 <textarea name="notes" ng-model="RideNotes">
                     Enter notes here.
                 </textarea>
-                <input type="submit" value"Submit" />
+                <input type="submit" value="Submit" />
             </form>
         </widget-cell>
     </widget-row>
