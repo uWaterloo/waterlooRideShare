@@ -10,6 +10,15 @@ function getData() {
     return queryResult;
 }
 
+function getYourData() {
+    var queryResult = db.Execute('SELECT * FROM Rides WHERE DriverID=@currentUser');
+    var rows = JSON.parse(queryResult);
+    if (rows.length > 0 && typeof rows[0].Error != 'undefined') {
+        return '{"status":"noTable"}';
+    }
+    return queryResult;
+}
+
 // Create talbe
 function createTable() {
     var result = {};
@@ -43,7 +52,7 @@ function insertRide() {
     
     db.Execute('INSERT INTO Rides (DriverID, DepartureCity, DepartureAddress, DestinationCity, DestinationDropoff, RideSeatsCapacity, RideSeatsTaken, RideNotes) VALUES (@currentUser, @departureCity, @departureAddress, @destinationCity, @destinationDropoff, @rideSeatsCapacity, 0, @rideNotes);');
 
-    return getData();
+    return getYourData();
 }
 
 // OPEN DATA API EXAMPLE
