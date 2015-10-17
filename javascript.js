@@ -95,7 +95,7 @@ waterlooRideShareFactory) {
                 departureDate: $scope.insertValue.DepartureDate,
                 destinationCity: $scope.insertValue.DestinationCity,
                 destinationDropoff: $scope.insertValue.DestinationDropoff,
-                rideSeatsCapacity: $scope.insertValue.RideSeatsCapacity,
+                rideSeatsCapacity: parseInt($scope.insertValue.RideSeatsCapacity),
                 rideNotes: $scope.insertValue.RideNotes
             }).then(function (result) {
                 console.log(result);
