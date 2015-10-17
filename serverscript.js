@@ -2,7 +2,7 @@
 
 // Retreive data from the database
 function getData() {
-    var queryResult = db.Execute('SELECT * FROM Rides');
+    var queryResult = db.Execute('SELECT * FROM Rides WHERE DriverID=@currentUser');
     var rows = JSON.parse(queryResult);
     if (rows.length > 0 && typeof rows[0].Error != 'undefined') {
         return '{"status":"noTable"}';
