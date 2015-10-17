@@ -220,20 +220,27 @@
                 <select ng-model="DepartureCity">
                    <option ng-repeat="city in cities" value="{{city}}">{{city}}</option>
                 </select>
-                <!--<select ng-model="DepartureCity">
 
-                   
-                </select>-->
                 <p>Pick-up Address</p>
                 <input type="text" name="address" ng-model="DepartureAddress" />
                 <p>Date (YYYY/MM/DD)</p>
-                
+                <input type="date" name="date" ng-model="DepartureDate" />
                 <h3>Destination</h3>
                 <p>City</p>
+                <select ng-model="Destination City">
+                   <option ng-repeat="city in cities" value="{{city}}">{{city}}</option>
+                </select>
                 <p>Drop-off</p>
+                <input type="text" name="dropoff" ng-model="DestinationDropoff" />
                 <h3>Details</h3>
                 <p>Seats Available</p>
+                <select ng-model="RideSeatsCapacity">
+                   <option ng-repeat="s in [1, 2, 3, 4, 5]" value="{{s}}">{{s}}</option>
+                </select>
                 <p>Notes</p>
+                <textarea name="notes" ng-model="RideNotes">
+                    Enter notes here.
+                </textarea>
                 <input type="submit" value"Submit" />
             </form>
         </widget-cell>
