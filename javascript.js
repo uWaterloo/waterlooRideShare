@@ -31,7 +31,7 @@ waterlooRideShareFactory) {
                     <option value="mississauga">Mississauga</option>
                     <option value="ottawa">Ottawa</option>
                     <option value="vaughn">Vaughn</option> */
-    $scope.cities = ["Waterloo", "Toronto", "Barrie", "Burlington", "Guelph", "Hamilton", 						 "Kitchener", "London", "Markham", "Mississauga", "Ottawa", "Vaughn"];
+    $scope.cities = ["Waterloo", "Toronto", "Barrie", "Burlington", "Guelph", "Hamilton", "Kitchener", "London", "Markham", "Mississauga", "Ottawa", "Vaughn"];
     
     // Model for the search and list example
     $scope.model = [{
