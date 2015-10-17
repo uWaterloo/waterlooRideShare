@@ -42,6 +42,17 @@ function insert() {
     }
 }
 
+// Book Ride
+function bookRideNow() {
+    if (args.Get("numPassengers") == 0) {
+        db.Execute('UPDATE rides set RideSeatsTaken=RideSeatsTaken+1, PassengerID1=@currentUser WHERE RideId=@id');
+    } else if (args.Get("numPassengers") == 1) {
+        db.Execute('UPDATE rides set RideSeatsTaken=RideSeatsTaken+1, PassengerID2=@currentUser WHERE RideId=@id');
+    } else if (args.Get("numPassengers") == 2) {
+        db.Execute('UPDATE rides set RideSeatsTaken=RideSeatsTaken+1, PassengerID3=@currentUser WHERE RideId=@id');
+    }
+}
+
 // OPEN DATA API EXAMPLE
 
 function getOpenData() {
