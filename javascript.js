@@ -129,6 +129,13 @@ waterlooRideShareFactory) {
         });
       $scope.portalHelpers.showView('findResults.html', 2);
     };
+    
+    // Handle bookings by passengers
+    $scope.bookRide = function (id, numPassengers) {
+            $scope.portalHelpers.invokeServerFunction('bookRideNow', {
+                id: id, numPassengers: numPassengers
+            })
+    };
 
 }])
     // Factory maintains the state of the widget
