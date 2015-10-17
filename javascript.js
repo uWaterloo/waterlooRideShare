@@ -90,6 +90,18 @@ waterlooRideShareFactory) {
         // Show details view in the second column
         $scope.portalHelpers.showView('details.html', 2);
     };
+    
+    // Handle Post New
+    $scope.newPost = function (item) {
+      //  open new post
+      $scope.portalHelpers.showView('newPost.html', 2);
+    };
+    
+    // Handle Find Info
+    $scope.findInfo = function (item) {
+      //  open new post
+      $scope.portalHelpers.showView('findInfo.html', 2);
+    };
 
     // Handle "previous item" click from the details page
     $scope.prevItem = function () {
