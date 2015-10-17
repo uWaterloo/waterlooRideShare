@@ -16,21 +16,17 @@ waterlooRideShareFactory) {
     $scope.openDataExampleData = waterlooRideShareFactory.openDataExampleData;
     $scope.dbData = waterlooRideShareFactory.dbData;
     $scope.item = waterlooRideShareFactory.item;
+    
+    // Declare all variables
+    $scope.insertValue.DepartureCity;
+    $scope.insertValue.DepartureAddress;
+    $scope.insertValue.DepartureDate;
+    $scope.insertValue.DestinationCity;
+    $scope.insertValue.DestinationDropoff;
+    $scope.insertValue.RideSeatsCapacity;
+    $scope.insertValue.RideNotes;
 
     // Hard-coded cities
-    
-            /*            <option value="waterloo">Waterloo</option>
-                    <option value="toronto">Toronto</option>
-                    <option value="barrie">Barrie</option>
-                    <option value="burlington">Burlington</option>
-                    <option value="guelph">Guelph</option>
-                    <option value="hamilton">Hamilton</option>
-                    <option value="kitchener">Kitchener</option>
-                    <option value="london">London</option>
-                    <option value="markham">Markham</option>
-                    <option value="mississauga">Mississauga</option>
-                    <option value="ottawa">Ottawa</option>
-                    <option value="vaughn">Vaughn</option> */
     $scope.cities = ["Waterloo", "Toronto", "Barrie", "Burlington", "Guelph", "Hamilton", "Kitchener", "London", "Markham", "Mississauga", "Ottawa", "Vaughn"];
     
     // Model for the search and list example
@@ -87,16 +83,26 @@ waterlooRideShareFactory) {
 
     // Handle form submit in the database test example
     $scope.insertData = function () {
-        if ($scope.insertValue.value.length > 50)
+        console.log($scope.insertValue);
+        
+        
+       /* if ($scope.insertValue.value.length > 50)
             alert('value should be less than 50 characters');
-        else {
-            $scope.portalHelpers.invokeServerFunction('insert', {
-                value: $scope.insertValue.value
+        else { */
+            $scope.portalHelpers.invokeServerFunction('insertRide', {
+                departureCity: $scope.insertValue.DepartureCity,
+                departureAddress: $scope.insertValue.DepartureAddress,
+                departureDate: $scope.insertValue.DepartureDate,
+                destinationCity: $scope.insertValue.DestinationCity,
+                destinationDropoff: $scope.insertValue.DestinationDropoff,
+                rideSeatsCapacity: $scope.insertValue.RideSeatsCapacity,
+                rideNotes: $scope.insertValue.RideNotes
             }).then(function (result) {
+                console.log(result);
                 $scope.dbData.value = result;
             });
             $scope.insertValue.value = "";
-        }
+        /*}*/ 
     };
 
     // Handle click on an item in the list and search example
