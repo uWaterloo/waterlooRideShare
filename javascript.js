@@ -106,10 +106,10 @@ waterlooRideShareFactory) {
     // Handle Find Results
     $scope.findResults = function (ride) {   
         $scope.portalHelpers.invokeServerFunction('searchForRides', {
-                ride: $scope.ride.value
+                departureCity: $scope.ride.DepartureCity
             }).then(function (
             result) {
-            $scope.ride.value = result;
+            $scope.searchData.value = result;
         });
       $scope.portalHelpers.showView('findResults.html', 2);
     };
